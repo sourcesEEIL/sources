@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+      
+      body,
+      html {
+        background-color: #38618c;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      body {
+        opacity: 1;
+        transition: 0.7s opacity;
+      }
+      
+      body.fade {
+          opacity: 0;
+          transition: none;
+      }
+      body.all-loaded {
+          opacity: 1;
+      }
+      .page_div {
+        display: none;
+        transition: none;
+      }
+      .display {
+        text-align: left;
+      }
+      
+      .aside-section {
+        top: 0;
+        bottom: 0;
+        position: absolute;
+      }
+      
+      .aside-left {
+        display: none;
+        width: 40%;
+        height: 100%;
+        left: 0;
+        background-color: #ff5964;
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out;
+      }
+      
+      .aside-right {
+        width: 100%;
+        right: 0;
+        background-color: #38618c;
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+      }
+      
+      .aside-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 150px;
+        text-align: left;
+        padding-left: 50px;
+      }
+      
+      .aside-content {
+        margin-top: 150px;
+        padding: 0 40px;
+        position: relative;
+        color: white;
+        text-align: center;
+      }
+      
+      .aside-list li {
+        margin-bottom: 20px;
+      }
+      
+      .aside-anchor::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background-color: #ff5964;
+        left: 0;
+        right: 0;
+        height: 3px;
+        border-radius: 3px;
+      }
+      
+      .aside-anchor::before {
+        border-radius: 3px;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background-color: #fff;
+        left: 0;
+        height: 3px;
+        z-index: 1;
+        width: 50%;
+        -webkit-transition: transform 0.2s ease-in-out;
+        -o-transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .aside-anchor:hover:before {
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      
+      .aside-anchor {
+        padding-bottom: 7px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 30px;
+        position: relative;
+        font-weight: 500;
+      }
+      
+      aside .aside-left {
+        position: absolute;
+        transform: translateY(0%);
+        height:100%;
+        line-height: 50px;
+      }
+      
+      aside .aside-right {
+        transform: translateX(0%);
+        line-height: 35px;
+      }
+      label .bar {
+        background-color: #fff;
+      }
+      
+      label .top {
+        -webkit-transform: translateY(0px) rotateZ(45deg);
+        -moz-transform: translateY(0px) rotateZ(45deg);
+        -ms-transform: translateY(0px) rotateZ(45deg);
+        -o-transform: translateY(0px) rotateZ(45deg);
+        transform: translateY(0px) rotateZ(45deg);
+      }
+      
+      label .bottom {
+        -webkit-transform: translateY(-15px) rotateZ(-45deg);
+        -moz-transform: translateY(-15px) rotateZ(-45deg);
+        -ms-transform: translateY(-15px) rotateZ(-45deg);
+        -o-transform: translateY(-15px) rotateZ(-45deg);
+        transform: translateY(-15px) rotateZ(-45deg);
+      }
+      
+      label .middle {
+        width: 0;
+      }
+      
+      .middle {
+        margin: 0 auto;
+      }
+      
+      label {
+        top: 10px;
+        display: inline-block;
+        padding: 7px 10px;
+        background-color: transparent;
+        cursor: pointer;
+        margin: 10px;
+        z-index: 3;
+        position: fixed;
+      }
+      
+      .bar {
+        display: block;
+        background-color: #38618c;
+        width: 30px;
+        height: 3px;
+        border-radius: 5px;
+        margin: 5px auto;
+        transition: background-color 0.4s ease-in, transform 0.4s ease-in,
+          width 0.4s ease-in;
+      }
+      
+      h1 {
+        margin: 0;
+        position: relative;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        text-align: center;
+        font-size: 30px;
+      }
+      
+      h1 span {
+        font-size: 20px;
+        display: block;
+      }
+      
+      p {
+        font-size: 400%;
+      }
+      
+      .button {
+        display: inline-block;
+        background-image: none;
+        border: none;
+        background-color: transparent;
+        padding-bottom: 7px;
+        position: relative;
+        cursor: pointer;
+        font-size: 20px;
+        color: white;
+        padding: 7px 50px;
+        border: 2px solid white;
+        border-radius: 10px;
+        transition: transform .2s;
+      }
+      .button:hover {
+        background-color: white;
+        color: black;
+        transform: scale(1.1);
+      }
+      h1 {
+        font-size: 40px;
+      }
+      .aside-left {
+        display: block;
+      }
+      .aside-right {
+        width: 60%;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -o-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      
+      body {
+        font-family: "Roboto", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 30px;
+        color: #777;
+      }
+      
+      .container {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+      
+      #contact input[type="text"],
+      #contact input[type="email"],
+      #contact input[type="tel"],
+      #contact input[type="url"],
+      #contact textarea,
+      #contact button[type="submit"] {
+        font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+      }
+      
+      select {
+        font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+        width: 70%;
+        border: 1px solid #ccc;
+        background-color: #FFF;
+        margin: 0 0 5px;
+        padding: 10px;
+      }
+      
+      select:hover {
+        -webkit-transition: border-color 0.3s ease-in-out;
+        -moz-transition: border-color 0.3s ease-in-out;
+        transition: border-color 0.3s ease-in-out;
+        border: 1px solid #aaa;
+      }
+      
+      #contact {
+        background-color: #F9F9F9;
+        padding: 25px;
+        margin: 150px 0;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        border-radius: 10px;
+      }
+      
+      .a-propos {
+        margin:2em;
+        color:white;
+        text-align:center;
+      }
+      
+      .a-propos-div {
+        background-color:white;
+        width:50em;
+        position:absolute;
+        left:50%;
+        top: -25em;
+        border-radius: 2em;
+        transform: translate(-50%, 50%);
+        padding: 3em 2em 3em 1em;
+        margin-bottom: 3em;
+        margin-top: -12em;
+      }
+      
+      .a-propos-div h2 {
+        padding-left:2em;
+        padding-right:1.2em;
+      }
+      
+      .a-propos-div h2:first-child {
+        text-align: justify;
+        text-justify: auto;
+      }
+      
+      #contact h3 {
+        display: block;
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+      
+      #contact h4 {
+        margin: 0px 0 0px;
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      
+      fieldset {
+        border: medium none !important;
+        margin: 0 0 10px;
+        min-width: 100%;
+        padding: 0;
+        width: 100%;
+      }
+      
+      #contact input[type="text"],
+      #contact input[type="email"],
+      #contact input[type="tel"],
+      #contact input[type="url"],
+      #contact textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        background-color: #FFF;
+        margin: 0 0 5px;
+        padding: 10px;
+      }
+      
+      #contact input[type="text"]:hover,
+      #contact input[type="email"]:hover,
+      #contact input[type="tel"]:hover,
+      #contact input[type="url"]:hover,
+      #contact textarea:hover {
+        -webkit-transition: border-color 0.3s ease-in-out;
+        -moz-transition: border-color 0.3s ease-in-out;
+        transition: border-color 0.3s ease-in-out;
+        border: 1px solid #aaa;
+      }
+      
+      #contact textarea {
+        height: 100px;
+        max-width: 100%;
+        resize: none;
+      }
+      
+      #contact button[type="submit"] {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background-color: #00C8DC;
+        color: #F9F9F9;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 15px;
+      }
+      
+      #contact button[type="submit"]:hover {
+        background-color: #00a5dc;
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+      }
+      
+      #contact button[type="submit"]:active {
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+      }
+      
+      .copyright {
+        text-align: center;
+      }
+      
+      #contact input:focus,
+      #contact textarea:focus {
+        outline: 0;
+        border: 1px solid #aaa;
+      }
+      
+      ::-webkit-input-placeholder {
+        color: #888;
+      }
+      
+      :-moz-placeholder {
+        color: #888;
+      }
+      
+      ::-moz-placeholder {
+        color: #888;
+      }
+      
+      :-ms-input-placeholder {
+        color: #888;
+      }
+      .previous {
+        background-color: #f1f1f1;
+        position: fixed;
+        z-index: 9;
+        left: 15px;
+        top: 15px;
+        cursor: pointer;
+        width: 180px;
+        border: none;
+        background-color: #ff5964;
+        color: #F9F9F9;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 90px;
+      }
+      .previous:hover {
+      color: #ff5964;
+      background-color: #F9F9F9;
+    }
+    
+    input.halfText {
+        width: 200px;
+    }
+    
+    .a-propos-div h2 a {
+      color: #abafb5;
+    }
+    
+    .a-propos-div h2 a:hover {
+      color: #7a7d82;
+    }
+    
+    .a-propos-div .homeButton {
+      margin-left: 2em;
+    }
+    
+    .homeButton {
+        background-color: #f1f1f1;
+        cursor: pointer;
+        width: 180px;
+        border: none;
+        background-color: #ff5964;
+        color: #F9F9F9;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 90px;
+    }
+    .homeButton:hover {
+      background-color: #ff8c8c;
+    }
+    
+    .contact-me {
+      background-color: #1999fc;
+      cursor: pointer;
+      width: 180px;
+      border: none;
+      color: #F9F9F9;
+      margin: 0 0 5px;
+      padding: 10px;
+      margin-left: 0.5em;
+      font-size: 15px;
+      border-radius: 90px;
+    }
+    
+    .contact-me:hover {
+      background-color: #77abff;
+    }
+    
+    .a-propos-div hr {
+      background-color: #fff;
+	    border-top: 2px dashed #8c8b8b;
+	    margin-left: 2em;
+	    margin-right: 1em;
+    }
