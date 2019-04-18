@@ -35,6 +35,34 @@ function parseArticleFromURL(URL) {
       }
     });
   }
+  let container;
+  const getRCAuthor = () => {
+  	let author = "S.A.";
+  	abcv = container;
+  	if(container) {
+    	let txt = container.innerText;
+        if(txt.match(/Texte : |Un texte d/)) {
+            txt = txt.split(/Texte : |Un texte d/)[1].slice(1).split("\n")[0]
+            txt = txt.split(" ").filter(x => x.length);
+            let a = txt.map(x => x[0] !== x[0].toUpperCase()).indexOf(true);
+            if(a + 1) {
+                author = txt.slice(0, (a)).join(" ").trim();
+            } else {
+                author = txt.join(" ").trim();
+            }
+            author = author.split(" /")[0]
+            author = author.split(",")[0]
+            author = author.split(" -")[0]
+        } else if(container.getElementsByClassName("signature-avatar-first-name").length) {
+            author = container.getElementsByClassName("signature-avatar-first-name")[0].innerText;
+            if(author.match(/agence/i) || author === "Radio-Canada")
+              author = "S.A."
+        } else {
+            author = "S.A.";
+        }
+  	}
+  	return author;
+  }
   const getURL = (url) => {
     return getSource(url).then((s) => {
       let js = [];
@@ -138,7 +166,7 @@ function parseArticleFromURL(URL) {
     });
   }).then(html => {
     document.body.removeChild(document.getElementById("tempCont"));
-    let container = document.createElement("div");
+    container = document.createElement("div");
     container.innerHTML = html;
     let containerTitle = "";
     if(typeof container.getElementsByTagName("title")[0] !== "undefined")
@@ -550,6 +578,10 @@ function parseArticleFromURL(URL) {
       	{
       		url: "usherbrooke.ca",
       		website: "Université de Sherbrooke"
+      	},
+      	{
+      		url: "radio-canada.ca",
+      		author: getRCAuthor()
       	}
       ];
       for(let e in exceptions) {
