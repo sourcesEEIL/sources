@@ -350,6 +350,7 @@ function parseArticleFromURL(URL) {
             return author;
           })();
         } catch (e) {
+          console.error(e);
           a = "S.A.";
         }
         return a;
